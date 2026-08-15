@@ -1,12 +1,12 @@
-*FlexFit Studio*
+FlexFit Studio
 
-Gym Management Platform · Project 1 Refactor
+Gym Management Platform — Project 1 Refactor
 
-A behavior-preserving refactor of a production-style gym management application built for the 2026 i12 HR Drive Hackathon — Computer Science Project.
+A behavior-preserving refactor of an existing gym management application for the 2026 i12 HR Drive Hackathon — Computer Science Project.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-15-000000?logo=next.js&logoColor=white" alt="Next.js 15">
-  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/tRPC-API-2596BE" alt="tRPC">
   <img src="https://img.shields.io/badge/Drizzle-ORM-C5F74F" alt="Drizzle ORM">
   <img src="https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite&logoColor=white" alt="SQLite">
@@ -14,95 +14,372 @@ A behavior-preserving refactor of a production-style gym management application 
   <img src="https://img.shields.io/badge/Vitest-Tests-6E9F18?logo=vitest&logoColor=white" alt="Vitest">
 </p>
 
-Overview
+Table of Contents
 
-FlexFit Studio is a full-stack gym management application supporting members, staff, trainers, administrators, and corporate customers.
+About the Project
 
-Core Capabilities
+Project Brief
 
-🏋️ Member memberships and class bookings
+Core Features
 
-🎟️ Membership credits and credit consumption
+Project 1 Requirements
 
-🔄 Booking cancellation and rescheduling
+Refactoring Objective
 
-⏳ Class waitlists
+Engineering Approach
 
-🖥️ Front-desk and kiosk operations
+Technology Stack
 
-👨‍🏫 Trainer management and schedules
+Architecture
 
-✅ Attendance and check-ins
+Project Structure
 
-🏢 Corporate credit pools and employee bookings
+Refactoring Areas
 
-📊 Revenue and administrative reporting
+Database Strategy
 
-💳 Payments and refunds
+Behavior Preservation
 
-🔔 Notifications
+Testing Strategy
 
-Project 1 Objective
+Quick Start
 
-The objective was not to rebuild FlexFit Studio or redesign its product behavior.
+Development Commands
 
-The task was to take an existing working codebase and restructure it into software that is easier to:
+Development Workflow
 
-understand
+Troubleshooting
 
-maintain
+Verification Checklist
 
-test
+Documentation
 
-extend
+Engineering Principles
 
-review
+Hackathon Evaluation
 
-while preserving its existing behavior.
+AI-Assisted Development
+
+License
+
+About the Project
+
+FlexFit Studio is a full-stack gym management application covering the workflows of:
+
+Members
+
+Staff
+
+Trainers
+
+Administrators
+
+Corporate customers
+
+The application manages gym operations such as memberships, classes, credits, bookings, waitlists, attendance, trainer schedules, corporate credit pools, payments, refunds, and reporting.
+
+The original project was supplied as a working codebase built with:
+
+Next.js 15
+
+TypeScript
+
+tRPC
+
+Drizzle ORM
+
+SQLite
+
+Tailwind CSS
+
+The challenge was to restructure the existing application without changing how it behaves.
+
+Project Brief
+
+The project was part of the:
+
+2026 i12 HR Drive Hackathon — Computer Science Project
+
+The event is an individual engineering challenge focused on:
+
+Clear communication
+
+Organized documentation
+
+Code quality
+
+Handling an unfamiliar problem
+
+Two projects were provided.
+
+Project
+
+Deliverable
+
+Project 1
+
+FlexFit Studio refactor
+
+Project 2
+
+AI detector for admissions essays
+
+This repository focuses on Project 1: FlexFit Studio Refactor.
+
+The original challenge specifically asks the developer to clone the repository rather than fork it and push the completed work to their own repository.
+
+Core Features
+
+FlexFit Studio supports the following application areas.
+
+Member Management
+
+Members can:
+
+Maintain memberships
+
+Purchase or use membership plans
+
+Use class credits
+
+Book classes
+
+Cancel bookings
+
+Reschedule bookings
+
+Join waitlists
+
+Receive notifications
+
+Class Management
+
+The system supports:
+
+Class schedules
+
+Class capacity
+
+Booking availability
+
+Waitlists
+
+Cancelled classes
+
+Class timing rules
+
+Trainer schedules
+
+Booking Management
+
+Booking workflows include:
+
+Creating bookings
+
+Checking class capacity
+
+Consuming credits
+
+Handling waitlists
+
+Cancelling bookings
+
+Rescheduling bookings
+
+Applying booking policies
+
+Handling booking edge cases
+
+Front Desk / Kiosk
+
+Staff-facing workflows include:
+
+Front-desk operations
+
+Kiosk operations
+
+Member attendance
+
+Check-ins
+
+Booking-related operations
+
+Trainer Management
+
+Trainer workflows include:
+
+Trainer schedules
+
+Assigned classes
+
+Attendance-related operations
+
+Corporate Management
+
+Corporate customers can:
+
+Purchase credit pools
+
+Provide credits to employees
+
+Allow employees to use corporate credits
+
+Participate in corporate booking workflows
+
+Corporate workflows have their own business rules rather than being treated as identical to normal member bookings.
+
+Administration
+
+Administrative functionality includes:
+
+Staff management
+
+Trainer management
+
+Company management
+
+Attendance
+
+Announcements
+
+Notifications
+
+Revenue reports
+
+Administrative reporting
+
+Payment/refund workflows
+
+Project 1 Requirements
+
+The central requirement is:
+
+The application must behave exactly the same after the refactor.
+
+That means the refactor must protect:
+
+Inputs
+
+Existing valid and invalid inputs should continue to be handled correctly.
+
+Outputs
+
+Existing workflows should return the same expected results.
+
+Errors
+
+Existing validation and error behavior should not be casually changed.
+
+Edge Cases
+
+Existing boundary conditions and unusual cases must remain understood and protected.
+
+Business Rules
+
+Rules such as booking, cancellation, rescheduling, credits, waitlists, and corporate booking policies must continue to work.
+
+What The Refactor Is Trying To Solve
+
+The original application has accumulated code from multiple developers over time.
+
+The challenge describes it as a project that has passed through several developers who did not coordinate with each other.
+
+The resulting engineering problem is therefore not simply:
+
+"Make the application work."
+
+It is:
+
+Make an already-working application easier for another engineer to understand and maintain without breaking what already works.
+
+The refactor focuses on:
+
+Responsibility boundaries
+
+Duplication
+
+Large files
+
+Business-rule organization
+
+Service boundaries
+
+Testability
+
+Documentation
+
+Maintainability
+
+Refactoring Objective
+
+The core principle is:
 
 Change the structure, not the behavior.
 
-The refactor focuses on code organization, responsibility boundaries, duplicated business logic, testability, and documentation.
+The goal is not to introduce unnecessary technology.
 
-Engineering Goals
+The goal is to make the existing system easier to reason about.
 
-1. Separation of Responsibilities
+Engineering Approach
 
-Separate:
+The refactor follows four major principles.
 
-tRPC/API concerns
+1. Separate Responsibilities
 
-business workflows
+A tRPC router should primarily define the API boundary.
 
-deterministic business policies
+Business workflows should live in service modules.
 
-database operations
+Deterministic business rules should live in policy modules.
 
-2. Reduced Duplication
+Database access should remain within the persistence layer.
 
-Move repeated business rules and calculations into shared modules.
+2. Centralize Repeated Logic
 
-3. Smaller Modules
+When the same business rule is implemented in several places, it becomes difficult to guarantee that all copies remain consistent.
 
-Break apart large routers that had accumulated multiple unrelated responsibilities.
+The refactor moves reusable rules into shared modules where appropriate.
 
-4. Behavior Preservation
+Examples include:
 
-Preserve existing:
+Booking policies
 
-inputs
+Rescheduling policies
 
-outputs
+Time calculations
 
-validation
+Corporate booking rules
 
-errors
+3. Split Unrelated Responsibilities
 
-edge cases
+A file that performs multiple unrelated jobs becomes harder to understand and harder to change safely.
 
-business rules
+The refactor therefore separates workflows such as:
 
-database behavior
+Booking
+
+Rescheduling
+
+Corporate booking
+
+Reporting
+
+into clearer service boundaries.
+
+4. Avoid Unnecessary Rewrites
+
+The project does not require changing technologies.
+
+The existing stack remains:
+
+Next.js
+TypeScript
+tRPC
+Drizzle ORM
+SQLite
+Tailwind CSS
+
+The database model is also intentionally preserved.
 
 Technology Stack
 
@@ -138,163 +415,103 @@ Testing
 
 Vitest
 
-The existing application stack was retained rather than replaced.
+Architecture
 
-⚡ Quick Start
+High-Level Architecture
 
-Prerequisites
+┌─────────────────────────────────────┐
+│             Next.js App             │
+│         Pages / UI / Routes         │
+└──────────────────┬──────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────┐
+│             tRPC Routers             │
+│          API / Input Boundary        │
+└──────────────────┬──────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────┐
+│            Service Layer             │
+│       Business Workflows / Rules     │
+└──────────────────┬──────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────┐
+│             Drizzle ORM              │
+│           Persistence Layer          │
+└──────────────────┬──────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────┐
+│                SQLite                 │
+└─────────────────────────────────────┘
 
-Make sure you have:
+Layer Responsibilities
 
-Node.js 20+
+Next.js App
 
-npm
+Responsible for:
 
-Git
+Pages
 
-SQLite does not require a separate database server.
+Routes
 
-1. Clone the Repository
+UI composition
 
-git clone <your-private-repository-url>
-cd flexfit-studio
+Application navigation
 
-2. Install Dependencies
+tRPC Routers
 
-npm install
+Responsible for:
 
-3. Initialize the Database
+API procedures
 
-Apply the existing Drizzle schema:
+Input validation at the API boundary
 
-npm run db:push
+Authentication/authorization boundaries
 
-Seed the development database:
+Calling the appropriate business workflow
 
-npm run db:seed
+Services
 
-The seed script creates the local development dataset.
-
-4. Start the Application
-
-npm run dev
-
-Open:
-
-http://localhost:3000
-
-5. Verify the Project
-
-Run the tests:
-
-npm test
-
-Run TypeScript checks:
-
-npx tsc --noEmit
-
-Create a production build:
-
-npm run build
-
-Quick Command Reference
-
-# Install dependencies
-npm install
-
-# Database
-npm run db:push
-npm run db:seed
-
-# Development
-npm run dev
-
-# Testing
-npm test
-
-# Type checking
-npx tsc --noEmit
-
-# Production build
-npm run build
-
-Note: Run db:push and db:seed after installing dependencies. They can also be run again when you need to recreate the local development database.
-
-For detailed setup, reset instructions, troubleshooting, and development guidance, see INSTALLATION_GUIDE.md.
-
-🏗️ Architecture
-
-The original backend contained large tRPC routers that mixed API handling, validation, business logic, database operations, and reporting.
-
-The refactored architecture separates these responsibilities:
-
-┌──────────────────────────┐
-│       Next.js App        │
-│     Pages / UI Layer     │
-└────────────┬─────────────┘
-             │
-             ▼
-┌──────────────────────────┐
-│       tRPC Routers       │
-│      API Boundary        │
-└────────────┬─────────────┘
-             │
-             ▼
-┌──────────────────────────┐
-│      Service Layer       │
-│ Business Workflows/Rules │
-└────────────┬─────────────┘
-             │
-             ▼
-┌──────────────────────────┐
-│       Drizzle ORM        │
-│     Persistence Layer    │
-└────────────┬─────────────┘
-             │
-             ▼
-┌──────────────────────────┐
-│          SQLite          │
-└──────────────────────────┘
-
-Responsibility Boundaries
-
-Layer
-
-Responsibility
-
-app/
-
-Next.js routes and pages
-
-components/
-
-Shared UI components
-
-routers/
-
-tRPC procedures and API boundary
-
-services/
+Responsible for:
 
 Business workflows
 
-*-policy.ts
+Multi-step operations
+
+Database coordination
+
+Business-level orchestration
+
+Policies
+
+Responsible for:
 
 Deterministic business rules
 
-db/
+Time boundaries
 
-Existing database and persistence layer
+Booking constraints
 
-tests/
+Rescheduling rules
 
-Regression and policy tests
+Reusable calculations
 
-documents/
+Database Layer
 
-Architecture and refactoring documentation
+Responsible for:
 
-📁 Project Structure
+Drizzle ORM
+
+SQLite persistence
+
+Existing schema
+
+Existing seed data
+
+Project Structure
 
 src/
 ├── app/
@@ -304,16 +521,16 @@ src/
 │   └── ...                      # Shared UI components
 │
 ├── db/
-│   ├── index.ts                 # Existing database client
-│   ├── schema.ts                # Existing Drizzle schema
-│   └── seed.ts                  # Existing seed data
+│   ├── index.ts                 # Database client
+│   ├── schema.ts                # Drizzle schema
+│   └── seed.ts                  # Development seed data
 │
 ├── lib/
 │   └── ...                      # Shared utilities
 │
 └── server/
     ├── routers/
-    │   └── ...                  # tRPC API boundary
+    │   └── ...                  # tRPC API procedures
     │
     └── services/
         ├── booking-service.ts
@@ -328,21 +545,23 @@ tests/
 └── booking-policy.test.ts
 
 documents/
-├── architecture.md
-├── behavior-inventory.md
-├── refactoring-decisions.md
-├── test-strategy.md
-└── known-issues.md
+└── ...                          # Project documentation
 
-🔧 Refactoring Highlights
+The exact folder layout is an engineering decision rather than a requirement of the challenge. The important point is that the resulting structure has clear responsibilities and can be defended.
+
+Refactoring Areas
 
 Booking
 
-The original booking router contained several responsibilities:
+Booking logic is one of the most important business workflows.
 
-Booking validation
+The original implementation combined responsibilities such as:
 
-Membership and credit handling
+Validation
+
+Membership handling
+
+Credit handling
 
 Capacity checks
 
@@ -350,135 +569,193 @@ Booking creation
 
 Cancellation
 
-Waitlist handling
+Waitlist behavior
 
-Attendance-related operations
+Attendance-related behavior
 
-These responsibilities were separated so the router primarily acts as the API boundary while workflow logic is handled by the service layer.
+The refactor separates these concerns.
 
-routers/bookings.ts
+tRPC booking procedure
         │
         ▼
-services/booking-service.ts
+Booking service
         │
-        ├── booking-policy.ts
-        ├── time-policy.ts
-        │
-        ▼
-      Drizzle
+        ├── Booking policy
+        ├── Time policy
+        └── Database operations
 
-Why?
+Result
 
-A large router becomes difficult to reason about when API handling and business workflows are mixed together.
+The API boundary no longer needs to contain the entire booking workflow.
 
-The refactor makes the booking workflow independently understandable and testable without changing the public application workflow.
+The workflow becomes easier to:
+
+read
+
+test
+
+reason about
+
+modify
+
+while preserving the existing behavior.
 
 Rescheduling
 
-Rescheduling logic was extracted into:
+Rescheduling is separated into:
 
 src/server/services/reschedule-service.ts
 src/server/services/reschedule-policy.ts
 
-Validation and policy rules are centralized instead of being duplicated across procedures.
+The service is responsible for the workflow.
 
-This keeps rules such as rescheduling time boundaries in one place.
+The policy is responsible for deterministic rescheduling rules.
 
-Corporate Bookings
+This avoids mixing policy decisions with database orchestration.
 
-Corporate booking workflows were extracted into:
+Corporate Booking
+
+Corporate booking is kept separate from normal member booking because corporate accounts have different business constraints.
+
+The corporate workflow is handled through a dedicated service boundary:
 
 src/server/services/corporate-booking-service.ts
 
-Corporate rules remain separate from normal member booking rules because the two workflows have different business constraints.
-
-The goal was not to force every booking workflow into one generic abstraction.
+This avoids creating a large generic booking abstraction simply for the sake of reuse.
 
 Administrative Reporting
 
-Reporting operations were extracted from the large admin router into:
+Reporting is treated as a separate responsibility.
+
+Administrative report operations are extracted into:
 
 src/server/services/admin-report-service.ts
 
-This keeps report queries and calculations separate from the tRPC transport layer.
+This separates reporting queries/calculations from the tRPC API boundary.
 
-🗄️ Database Strategy
+Database Strategy
 
-The persistence layer was intentionally kept stable.
+Database Was Intentionally Preserved
 
-The refactor does not redesign the database model.
+The challenge explicitly allows either:
 
-The existing:
+keeping the existing database
+
+changing the data model if there is a strong reason
+
+This implementation chooses to keep the existing database.
+
+The existing persistence stack remains:
 
 SQLite
+   │
+   ▼
 Drizzle ORM
-src/db/schema.ts
-src/db/index.ts
-src/db/seed.ts
+   │
+   ├── src/db/schema.ts
+   ├── src/db/index.ts
+   └── src/db/seed.ts
 
-remain the foundation of the application.
+Why?
 
-This was a deliberate engineering decision. The challenge permits database changes, but a database redesign was not necessary to achieve the structural improvements required by Project 1.
+A database redesign was not necessary to achieve the primary objective of Project 1.
 
-The refactor therefore concentrates on the application layer above persistence.
+The core engineering problem is application structure rather than persistence technology.
 
-🛡️ Behavior Preservation
+Changing the schema without a clear behavioral requirement would also increase the risk of introducing regressions.
 
-Behavior preservation is the central constraint of Project 1.
+Therefore:
 
-The refactor aims to preserve:
+The refactor changes the organization of application logic while keeping the persistence model stable.
+
+Behavior Preservation
+
+Behavior preservation is the most important constraint in this project.
+
+The refactor is designed to preserve:
 
 Existing application workflows
 
-Existing tRPC procedure behavior
+Existing tRPC procedures
 
-Existing validation rules
+Existing validation
 
-Existing business boundaries
+Existing errors
 
-Existing database interactions
-
-Existing error behavior
+Existing business rules
 
 Existing edge cases
 
-When questionable existing behavior was discovered, it was not silently rewritten merely because it looked unusual.
+Existing database behavior
 
-Such cases are recorded in:
+Examples of Protected Business Rules
 
-documents/behavior-inventory.md
-documents/known-issues.md
-documents/refactoring-decisions.md
+The regression tests currently cover policy behavior such as:
 
-🧪 Testing & Verification
+Booking Time
 
-Vitest is used for deterministic business-policy regression tests.
+The application calculates the time remaining before a class starts.
 
-Current Coverage
+Unlimited Credits
 
-Booking time calculations
+A credit value of 999 or greater is treated as unlimited.
 
-Unlimited credit behavior
+Cancellation Boundary
 
-Cancellation boundaries
+The existing 12-hour cancellation boundary is preserved.
 
-No-credit refund behavior
+No-Credit Refund
 
-Rescheduling boundaries
+A booking that used no credits does not receive a credit refund.
 
-Invalid rescheduling
+Rescheduling Boundary
 
-Corporate cancellation timing
+Rescheduling is allowed at exactly four hours before the class and rejected inside the four-hour window.
+
+Corporate Cancellation
+
+The corporate cancellation window remains at 24 hours.
+
+These are examples of existing behavior that the refactor protects through explicit regression tests.
+
+Testing Strategy
+
+The project uses Vitest for deterministic policy and regression testing.
+
+Current Test Suite
+
+The current test file is:
+
+tests/booking-policy.test.ts
+
+It covers:
+
+Booking policies
+├── calculates hours until a class starts
+├── treats 999 or more credits as unlimited
+├── uses the 12-hour cancellation boundary
+└── does not refund a booking that used no credits
+
+Reschedule policies
+├── allows rescheduling at exactly four hours
+└── rejects rescheduling inside the four-hour window
+
+Corporate booking policy
+└── keeps the corporate cancellation window at 24 hours
+
+Current Result
+
+7 tests
+7 passing
+0 failing
+
+Verification Commands
 
 Run Tests
 
 npm test
 
-Current verification:
-
-7 / 7 tests passing
-
-Type Checking
+Type Check
 
 npx tsc --noEmit
 
@@ -486,37 +763,72 @@ Production Build
 
 npm run build
 
-Current Verification
+A successful verification should produce:
 
-✅ 7/7 tests passing
+Tests        → passing
+TypeScript   → no errors
+Next.js      → production build succeeds
 
-✅ 0 TypeScript errors
+Quick Start
 
-✅ Successful Next.js production build
+Prerequisites
 
-✅ 17 application routes generated
+Install:
 
-Automated checks are complemented by manual verification of the major member, staff, admin, and corporate workflows.
+Node.js 20+
 
-A small unit-test suite alone cannot prove complete application-level behavior preservation, so manual regression testing remains part of the verification process.
+npm
 
-🛠️ Development Commands
+Git
 
-Command
+SQLite does not require a separate server.
 
-Description
+Clone
+
+git clone <your-private-repository-url>
+cd flexfit-studio
+
+Install
+
+npm install
+
+Initialize Database
+
+npm run db:push
+
+Seed Development Data
+
+npm run db:seed
+
+Start Development Server
 
 npm run dev
 
-Start the development server
+Open:
+
+http://localhost:3000
+
+Development Commands
+
+Command
+
+Purpose
+
+npm install
+
+Install dependencies
+
+npm run dev
+
+Start development server
 
 npm run build
 
-Create a production build
+Create production build
 
 npm run start
 
-Start the production server
+Start production server
 
 npm test
 
@@ -528,106 +840,59 @@ Run TypeScript type checking
 
 npm run db:push
 
-Apply the existing Drizzle schema
+Apply Drizzle schema
 
 npm run db:seed
 
-Seed the local development database
+Seed development database
 
 npm run db:reset
 
-Reset and reseed the local development database
+Reset/reseed database if supported by the project
 
-🔄 Development Workflow
+Development Workflow
 
-1. Understand existing behavior
-             │
-             ▼
-2. Identify responsibility / duplication
-             │
-             ▼
-3. Make one focused refactor
-             │
-             ▼
-4. Run regression tests
-             │
-             ▼
-5. Run TypeScript checks
-             │
-             ▼
-6. Run production build
-             │
-             ▼
-7. Manually verify affected workflow
-             │
-             ▼
-8. Document the decision
+The refactor follows an incremental workflow.
 
-This keeps structural changes measurable and reduces the chance of accidental behavior changes.
+Understand existing behavior
+          │
+          ▼
+Identify duplication / responsibility problems
+          │
+          ▼
+Make one focused structural change
+          │
+          ▼
+Run tests
+          │
+          ▼
+Run TypeScript checks
+          │
+          ▼
+Run production build
+          │
+          ▼
+Manually verify affected workflow
+          │
+          ▼
+Document the decision
+          │
+          ▼
+Review git diff
 
-📚 Documentation
+The important part is that structural changes are made incrementally rather than rewriting the entire application at once.
 
-The documents/ directory contains the reasoning behind the refactor.
+Troubleshooting
 
-Document
+npm: ENOENT: process.cwd
 
-Purpose
-
-architecture.md
-
-Describes the resulting application structure
-
-behavior-inventory.md
-
-Records discovered application behavior
-
-refactoring-decisions.md
-
-Explains significant architectural decisions
-
-test-strategy.md
-
-Describes regression and verification strategy
-
-known-issues.md
-
-Records suspicious behavior that was intentionally preserved or documented
-
-📐 Design Principles
-
-Single Responsibility
-
-A module should have one clear reason to change.
-
-Thin API Boundaries
-
-tRPC routers should expose procedures and handle API-level concerns rather than contain entire business workflows.
-
-Centralized Policies
-
-Rules that are reused or require a single source of truth should live in dedicated policy modules.
-
-Minimal Abstraction
-
-Abstractions are introduced when they solve a real problem, not simply to increase the number of layers.
-
-Preserve Before Improving
-
-In a behavior-preserving refactor, unusual behavior is not automatically a bug.
-
-Changing it without understanding its impact can create a regression.
-
-🐛 Troubleshooting
-
-npm reports ENOENT: process.cwd
-
-This normally means the terminal is currently inside a directory that has been deleted or moved.
+This means the terminal is probably inside a directory that no longer exists.
 
 Run:
 
 cd ~
 
-Then navigate back to the project:
+Then return to the project:
 
 cd ~/Downloads/flexfit-studio
 
@@ -636,89 +901,230 @@ Verify:
 pwd
 ls
 
-Then retry the npm command.
+Then run:
+
+npm install
 
 pnpm: command not found
 
-You can use npm instead:
+The project can be run using npm:
 
 npm install
 npm run db:push
 npm run db:seed
 npm run dev
 
-Or install pnpm:
+If the repository is intended to use pnpm and you want to install it:
 
 npm install -g pnpm
 
-TypeScript Errors
+TypeScript Error
 
 Run:
 
 npx tsc --noEmit
 
-Fix the first reported source error before continuing.
+Fix the first source error reported.
 
-Production Build Errors
+Then run the command again.
+
+Production Build Error
 
 Run:
 
 npm run build
 
-Fix the first application/source error reported by Next.js.
+Read the first application/source error reported by Next.js.
 
-Avoid immediately running:
+Do not automatically run:
 
 npm audit fix --force
 
-Dependency upgrades are unrelated to the behavior-preserving refactor and can introduce new compatibility problems.
+Dependency upgrades can introduce unrelated breaking changes and are not a substitute for fixing an application error.
 
-Multiple Lockfile Warning
+Multiple Lockfiles Warning
 
-Next.js may warn that it detected multiple lockfiles.
-
-This is a workspace-root warning and does not necessarily indicate an application failure.
-
-For example:
+Next.js may report:
 
 Next.js inferred your workspace root...
+Detected additional lockfiles...
 
-Detected additional lockfiles:
-pnpm-lock.yaml
+This usually indicates that more than one package manager lockfile is visible to Next.js.
 
-The application can still build successfully.
+It does not necessarily mean the application is broken.
 
-Avoid deleting lockfiles blindly. Choose one package manager for normal development and keep the repository's intended lockfile.
+Use one package manager consistently for the repository and avoid deleting lockfiles blindly.
 
-✅ Final Verification Checklist
+Documentation
+
+The challenge provides an empty documents/ directory for project notes.
+
+Recommended documentation for the completed submission includes:
+
+documents/
+├── architecture.md
+├── behavior-inventory.md
+├── refactoring-decisions.md
+├── test-strategy.md
+└── known-issues.md
+
+architecture.md
+
+Should explain:
+
+Why the chosen structure exists
+
+What each layer owns
+
+Why routers and services are separated
+
+Where business policies live
+
+behavior-inventory.md
+
+Should record discovered behavior such as:
+
+Booking rules
+
+Cancellation rules
+
+Rescheduling rules
+
+Credit behavior
+
+Waitlist behavior
+
+Corporate rules
+
+Error behavior
+
+refactoring-decisions.md
+
+Should explain important decisions:
+
+What was changed
+
+Why it was changed
+
+What alternatives were considered
+
+Why the chosen approach was safer
+
+test-strategy.md
+
+Should explain:
+
+What was tested
+
+Why those behaviors matter
+
+What is covered automatically
+
+What is verified manually
+
+known-issues.md
+
+Should document suspicious or questionable existing behavior that was intentionally left unchanged rather than silently modifying it.
+
+Engineering Principles
+
+Single Responsibility
+
+A module should have one clear reason to change.
+
+Separation of Concerns
+
+API transport, business workflows, business policies, and persistence should not be unnecessarily mixed.
+
+Centralized Business Rules
+
+Rules that need to remain consistent should have a single implementation.
+
+Minimal Abstraction
+
+Do not introduce abstractions simply to make the architecture look more complex.
+
+Preserve Before Improving
+
+A behavior that looks unusual is not automatically a bug.
+
+In a refactoring project, changing it without understanding its consequences can create a regression.
+
+Make Decisions Defensible
+
+Every significant structural decision should have a reason that another engineer can understand.
+
+What This Project Demonstrates
+
+This project is intended to demonstrate the ability to:
+
+Read and understand an unfamiliar codebase
+
+Discover existing behavior rather than assuming it
+
+Refactor without blindly rewriting
+
+Identify responsibility boundaries
+
+Reduce duplicated business logic
+
+Create meaningful service boundaries
+
+Preserve existing business rules
+
+Add regression tests around important behavior
+
+Keep the database stable when a redesign is unnecessary
+
+Document engineering decisions
+
+Validate changes with tests and production builds
+
+Final Verification Checklist
 
 Before submission:
 
+Application
+
 Application starts successfully
 
-Database initializes successfully
+Main page loads
 
-Seed data loads successfully
+Login works
 
-Member login verified
+Member dashboard works
 
-Class booking verified
+Class schedule works
 
-Cancellation verified
+Membership plans work
 
-Rescheduling verified
+Booking workflow verified
 
-Waitlist verified
+Cancellation workflow verified
 
-Front-desk workflows verified
+Rescheduling workflow verified
 
-Attendance verified
+Waitlist workflow verified
 
-Trainer workflows verified
+Front-desk workflow verified
 
-Corporate workflows verified
+Kiosk workflow verified
 
-Admin reports verified
+Attendance workflow verified
+
+Trainer workflow verified
+
+Corporate workflow verified
+
+Admin workflow verified
+
+Revenue/reporting workflow verified
+
+Payment/refund workflow verified
+
+Notifications verified
+
+Code
 
 npm test passes
 
@@ -726,39 +1132,163 @@ npx tsc --noEmit passes
 
 npm run build passes
 
-Documentation reviewed
+No unintended database changes
+
+No unrelated dependency changes
+
+No debug code remains
+
+No unnecessary commented-out code remains
 
 git diff reviewed
 
-Only intended changes committed
+Documentation
 
-Repository pushed to the required GitHub repository
+README reviewed
 
-🏆 Hackathon Context
+Architecture documented
 
-2026 i12 HR Drive Hackathon — Computer Science Project
+Behavior inventory documented
 
-Item
+Refactoring decisions documented
 
-Detail
+Testing strategy documented
 
-Project
+Known issues documented
 
-FlexFit Studio Refactor
+Git
+
+Repository cloned rather than forked
+
+Work pushed to the required repository
+
+Only intended files committed
+
+Commit history reviewed
+
+Repository visibility matches submission requirements
+
+Hackathon Evaluation
+
+According to the project brief, the work is evaluated primarily on:
+
+Criterion
+
+What it demonstrates
+
+Communication
+
+Can another engineer understand your decisions?
+
+Documentation
+
+Did you record behavior, decisions, and limitations?
+
+Code Quality
+
+Is the resulting structure maintainable and coherent?
+
+Unfamiliar Problems
+
+Can you investigate and solve problems without a predefined solution?
+
+The challenge explicitly states that there is no single correct folder structure.
+
+The important question is whether the structure:
+
+Makes sense
+
+Preserves behavior
+
+Reduces unnecessary complexity
+
+Can be explained and defended
+
+AI-Assisted Development
+
+The challenge permits AI-assisted development.
+
+The important requirement is to understand and take responsibility for everything that ends up in the repository.
+
+AI usage should therefore be disclosed honestly in the final submission.
+
+A suitable disclosure can describe:
+
+Which AI tools were used
+
+What they were used for
+
+Whether generated code was reviewed
+
+How behavior was verified
+
+What decisions were made manually
+
+AI assistance does not replace understanding the resulting architecture or verifying behavior.
+
+Project Status
+
+Current local verification:
+
+Check
+
+Status
+
+Dependencies installed
+
+✅
+
+Database schema applied
+
+✅
+
+Development seed completed
+
+✅
+
+Tests
+
+✅ 7/7
+
+TypeScript
+
+✅
+
+Production build
+
+✅
+
+Next.js routes generated
+
+✅
 
 Submission
 
-Individual
+Project
 
-Project Window
+FlexFit Studio — Project 1 Refactor
 
-1–15 August 2026
+Submission Type
 
-Evaluation
+Individual submission.
 
-Communication, documentation, code quality, unfamiliar-problem handling
+Repository
 
-AI-assisted development is permitted by the challenge. Tools used during development should be disclosed honestly as part of the final submission process.
+The completed project should be pushed to the developer's required repository according to the hackathon submission instructions.
+
+Recommended submission materials
+
+GitHub repository
+
+Professional README
+
+Architecture/refactoring documentation
+
+Regression tests
+
+Optional walkthrough video
+
+Submission form entry
 
 License
 
