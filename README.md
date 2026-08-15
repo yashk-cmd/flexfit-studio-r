@@ -1,50 +1,64 @@
-FlexFit Studio
+*FlexFit Studio*
 
 Gym Management Platform · Project 1 Refactor
 
 A behavior-preserving refactor of a production-style gym management application built for the 2026 i12 HR Drive Hackathon — Computer Science Project.
 
-
-
-
-
-
-
-
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15-000000?logo=next.js&logoColor=white" alt="Next.js 15">
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/tRPC-API-2596BE" alt="tRPC">
+  <img src="https://img.shields.io/badge/Drizzle-ORM-C5F74F" alt="Drizzle ORM">
+  <img src="https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite&logoColor=white" alt="SQLite">
+  <img src="https://img.shields.io/badge/Tailwind-CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Vitest-Tests-6E9F18?logo=vitest&logoColor=white" alt="Vitest">
+</p>
 
 Overview
 
 FlexFit Studio is a full-stack gym management application supporting members, staff, trainers, administrators, and corporate customers.
 
-Core capabilities
+Core Capabilities
 
-Member memberships and class bookings
+🏋️ Member memberships and class bookings
 
-Membership credits and credit consumption
+🎟️ Membership credits and credit consumption
 
-Booking cancellation and rescheduling
+🔄 Booking cancellation and rescheduling
 
-Class waitlists
+⏳ Class waitlists
 
-Front-desk and kiosk operations
+🖥️ Front-desk and kiosk operations
 
-Trainer management and schedules
+👨‍🏫 Trainer management and schedules
 
-Attendance and check-ins
+✅ Attendance and check-ins
 
-Corporate credit pools and employee bookings
+🏢 Corporate credit pools and employee bookings
 
-Revenue and administrative reporting
+📊 Revenue and administrative reporting
 
-Payments and refunds
+💳 Payments and refunds
 
-Notifications
+🔔 Notifications
 
 Project 1 Objective
 
 The objective was not to rebuild FlexFit Studio or redesign its product behavior.
 
-The task was to take an existing working codebase and restructure it into software that is easier to understand, maintain, test, and extend while preserving its existing behavior.
+The task was to take an existing working codebase and restructure it into software that is easier to:
+
+understand
+
+maintain
+
+test
+
+extend
+
+review
+
+while preserving its existing behavior.
 
 Change the structure, not the behavior.
 
@@ -126,11 +140,11 @@ Vitest
 
 The existing application stack was retained rather than replaced.
 
-Quick Start
+⚡ Quick Start
 
 Prerequisites
 
-Install:
+Make sure you have:
 
 Node.js 20+
 
@@ -140,16 +154,16 @@ Git
 
 SQLite does not require a separate database server.
 
-1. Clone the repository
+1. Clone the Repository
 
 git clone <your-private-repository-url>
 cd flexfit-studio
 
-2. Install dependencies
+2. Install Dependencies
 
 npm install
 
-3. Initialize the database
+3. Initialize the Database
 
 Apply the existing Drizzle schema:
 
@@ -161,7 +175,7 @@ npm run db:seed
 
 The seed script creates the local development dataset.
 
-4. Start the application
+4. Start the Application
 
 npm run dev
 
@@ -169,7 +183,7 @@ Open:
 
 http://localhost:3000
 
-5. Verify the project
+5. Verify the Project
 
 Run the tests:
 
@@ -183,9 +197,9 @@ Create a production build:
 
 npm run build
 
-Quick command reference
+Quick Command Reference
 
-# Install
+# Install dependencies
 npm install
 
 # Database
@@ -208,31 +222,41 @@ Note: Run db:push and db:seed after installing dependencies. They can also be ru
 
 For detailed setup, reset instructions, troubleshooting, and development guidance, see INSTALLATION_GUIDE.md.
 
-Architecture
+🏗️ Architecture
 
 The original backend contained large tRPC routers that mixed API handling, validation, business logic, database operations, and reporting.
 
 The refactored architecture separates these responsibilities:
 
-Next.js App
-    |
-    v
-tRPC Routers
-    |
-    v
-Service Layer
-    |
-    +-- Business Workflows
-    |
-    +-- Business Policies
-    |
-    v
-Drizzle ORM
-    |
-    v
-SQLite
+┌──────────────────────────┐
+│       Next.js App        │
+│     Pages / UI Layer     │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│       tRPC Routers       │
+│      API Boundary        │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│      Service Layer       │
+│ Business Workflows/Rules │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│       Drizzle ORM        │
+│     Persistence Layer    │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│          SQLite          │
+└──────────────────────────┘
 
-Responsibility boundaries
+Responsibility Boundaries
 
 Layer
 
@@ -270,7 +294,7 @@ documents/
 
 Architecture and refactoring documentation
 
-Project Structure
+📁 Project Structure
 
 src/
 ├── app/
@@ -310,7 +334,7 @@ documents/
 ├── test-strategy.md
 └── known-issues.md
 
-Refactoring Highlights
+🔧 Refactoring Highlights
 
 Booking
 
@@ -333,15 +357,14 @@ Attendance-related operations
 These responsibilities were separated so the router primarily acts as the API boundary while workflow logic is handled by the service layer.
 
 routers/bookings.ts
-        |
-        v
+        │
+        ▼
 services/booking-service.ts
-        |
-        +-- booking-policy.ts
-        |
-        +-- time-policy.ts
-        |
-        v
+        │
+        ├── booking-policy.ts
+        ├── time-policy.ts
+        │
+        ▼
       Drizzle
 
 Why?
@@ -379,7 +402,7 @@ src/server/services/admin-report-service.ts
 
 This keeps report queries and calculations separate from the tRPC transport layer.
 
-Database Strategy
+🗄️ Database Strategy
 
 The persistence layer was intentionally kept stable.
 
@@ -399,7 +422,7 @@ This was a deliberate engineering decision. The challenge permits database chang
 
 The refactor therefore concentrates on the application layer above persistence.
 
-Behavior Preservation
+🛡️ Behavior Preservation
 
 Behavior preservation is the central constraint of Project 1.
 
@@ -427,11 +450,11 @@ documents/behavior-inventory.md
 documents/known-issues.md
 documents/refactoring-decisions.md
 
-Testing & Verification
+🧪 Testing & Verification
 
 Vitest is used for deterministic business-policy regression tests.
 
-Current coverage
+Current Coverage
 
 Booking time calculations
 
@@ -447,7 +470,7 @@ Invalid rescheduling
 
 Corporate cancellation timing
 
-Run:
+Run Tests
 
 npm test
 
@@ -455,29 +478,29 @@ Current verification:
 
 7 / 7 tests passing
 
-Type checking
+Type Checking
 
 npx tsc --noEmit
 
-Production build
+Production Build
 
 npm run build
 
-Current verification includes:
+Current Verification
 
-7/7 tests passing
+✅ 7/7 tests passing
 
-0 TypeScript errors
+✅ 0 TypeScript errors
 
-Successful Next.js production build
+✅ Successful Next.js production build
 
-17 application routes generated
+✅ 17 application routes generated
 
 Automated checks are complemented by manual verification of the major member, staff, admin, and corporate workflows.
 
 A small unit-test suite alone cannot prove complete application-level behavior preservation, so manual regression testing remains part of the verification process.
 
-Development Commands
+🛠️ Development Commands
 
 Command
 
@@ -515,34 +538,34 @@ npm run db:reset
 
 Reset and reseed the local development database
 
-Development Workflow
+🔄 Development Workflow
 
 1. Understand existing behavior
-          |
-          v
-2. Identify responsibility or duplication
-          |
-          v
+             │
+             ▼
+2. Identify responsibility / duplication
+             │
+             ▼
 3. Make one focused refactor
-          |
-          v
+             │
+             ▼
 4. Run regression tests
-          |
-          v
+             │
+             ▼
 5. Run TypeScript checks
-          |
-          v
+             │
+             ▼
 6. Run production build
-          |
-          v
+             │
+             ▼
 7. Manually verify affected workflow
-          |
-          v
+             │
+             ▼
 8. Document the decision
 
 This keeps structural changes measurable and reduces the chance of accidental behavior changes.
 
-Documentation
+📚 Documentation
 
 The documents/ directory contains the reasoning behind the refactor.
 
@@ -570,7 +593,7 @@ known-issues.md
 
 Records suspicious behavior that was intentionally preserved or documented
 
-Design Principles
+📐 Design Principles
 
 Single Responsibility
 
@@ -594,7 +617,7 @@ In a behavior-preserving refactor, unusual behavior is not automatically a bug.
 
 Changing it without understanding its impact can create a regression.
 
-Troubleshooting
+🐛 Troubleshooting
 
 npm reports ENOENT: process.cwd
 
@@ -628,7 +651,7 @@ Or install pnpm:
 
 npm install -g pnpm
 
-TypeScript errors
+TypeScript Errors
 
 Run:
 
@@ -636,7 +659,7 @@ npx tsc --noEmit
 
 Fix the first reported source error before continuing.
 
-Production build errors
+Production Build Errors
 
 Run:
 
@@ -650,7 +673,7 @@ npm audit fix --force
 
 Dependency upgrades are unrelated to the behavior-preserving refactor and can introduce new compatibility problems.
 
-Multiple lockfile warning
+Multiple Lockfile Warning
 
 Next.js may warn that it detected multiple lockfiles.
 
@@ -659,12 +682,15 @@ This is a workspace-root warning and does not necessarily indicate an applicatio
 For example:
 
 Next.js inferred your workspace root...
+
 Detected additional lockfiles:
 pnpm-lock.yaml
 
-The application can still build successfully. Avoid deleting lockfiles blindly; choose one package manager for normal development and keep the repository's intended lockfile.
+The application can still build successfully.
 
-Final Verification Checklist
+Avoid deleting lockfiles blindly. Choose one package manager for normal development and keep the repository's intended lockfile.
+
+✅ Final Verification Checklist
 
 Before submission:
 
@@ -708,7 +734,7 @@ Only intended changes committed
 
 Repository pushed to the required GitHub repository
 
-Hackathon Context
+🏆 Hackathon Context
 
 2026 i12 HR Drive Hackathon — Computer Science Project
 
